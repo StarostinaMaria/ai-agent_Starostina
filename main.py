@@ -2,6 +2,16 @@
 import agent
 
 
+def print_help():
+    """Выводит справку по командам и их назначению."""
+    print("СПРАВКА ПО КОМАНДАМ")
+    print("add <название>  — Добавить тренировку (пример: add Жим лежа)")
+    print("list            — Показать список всех тренировок")
+    print("done <id>       — Отметить тренировку выполненной (пример: done 1)")
+    print("help            — Показать эту справку")
+    print("exit            — Завершить работу программы")
+
+
 def main():
     print("Привет! Я помощник по тренировкам.")
 
@@ -21,7 +31,7 @@ def main():
             break
 
         elif command == "help":
-            print("\nКоманды: add <название>, list, done <id>, help, exit")
+            print_help()
 
         elif command == "add":
             if len(parts) > 1:
