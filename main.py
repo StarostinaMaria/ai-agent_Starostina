@@ -15,7 +15,8 @@ def print_help():
 def main():
     print("Привет! Я помощник по тренировкам.")
 
-    workouts = []
+    # Загружаем данные при старте
+    workouts = agent.load_workouts()
 
     while True:
         user_input = input("\nВведите команду > ").strip()
@@ -27,7 +28,9 @@ def main():
         command = parts[0].lower()
 
         if command == "exit":
-            print("До свидания!")
+            # Сохраняем данные перед выходом!
+            agent.save_workouts(workouts)
+            print("Данные сохранены. До свидания!")
             break
 
         elif command == "help":
