@@ -28,10 +28,15 @@ def main():
         command = parts[0].lower()
 
         if command == "exit":
-            # Сохраняем данные перед выходом!
-            agent.save_workouts(workouts)
-            print("Данные сохранены. До свидания!")
-            break
+            if len(parts) > 1:
+                print("Ошибка: Команда exit не принимает аргументов.")
+            else:
+                # Проверяем, прошло ли сохранение успешно
+                if agent.save_workouts(workouts):
+                    print("Данные сохранены. До свидания!")
+                else:
+                    print("Выход без сохранения. До свидания!")
+                break
 
         elif command == "help":
             print_help()

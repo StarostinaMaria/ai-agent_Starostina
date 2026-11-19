@@ -89,6 +89,6 @@ python3 -m unittest test_agent.py
 Устанавливаем инструмент coverage для измерения покрытия. Для этого в терминале вводим:
 python3 -m pip install coverage
 Измерение покрытия командами:
-python3 -m coverage run -m unittest test_agent.py
+python3 -m coverage run --source=agent -m unittest test_agent.py 
 python3 -m coverage report -m
-Текущее покрытие строк кода составляет 91%
+Текущее покрытие строк кода составляет 80%
