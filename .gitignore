@@ -1,1 +1,6 @@
 __pycache__/
+workouts.json
+.coverage
+htmlcov/
+.pytest_cashe/
+.DS_Store
